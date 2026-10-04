@@ -13,6 +13,8 @@ npm run dev
 
 ## Firebase 설정
 
+배포 주소: https://partnerbase.web.app
+
 `.env.example`을 복사해 `.env`를 만들고 Firebase 웹 앱 설정 값을 입력합니다. `.env`는 Git에서 제외됩니다.
 
 ```env
@@ -76,7 +78,7 @@ VITE_FIREBASE_APP_ID=
 DB 갱신 후 `node scripts/exportPublicBusinessDirectory.mjs`로 공개 검색 목록을 추출합니다.
 `public/data/public-businesses.json`에는 표시용 필드만 포함하며, 원본 행·대표자·사업자번호는 내보내지 않습니다.
 목록은 방문자마다 Firestore 전체를 조회하지 않도록 Hosting에서 제공하며, 자동 실시간 동기화는 아닙니다.
-추출 후 `npm run build` 및 `npx firebase deploy --only hosting --project velder-381f3`로 반영합니다.
+추출 후 `npm run build` 및 `npx firebase deploy --only hosting --project velder-381f3`로 반영합니다. Hosting 대상은 `firebase.json`의 `partnerbase` 사이트입니다.
 
 ## 공정거래위원회 통신판매업 API 수집
 
